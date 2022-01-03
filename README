@@ -1,21 +1,38 @@
 HTTPChatServer hosts a server that uses the HTTP protocol in java
 The server is initialized with a port from command line
-  - server sends back one html file: login.html, chat.html, or error.html
-    - login.html: 
-      - client attempts to login to the server by sending a POST message that contains the login.html URL, username, and password
-      - credentials.txt stores valid username, password pairs
-      - if the client sends a valid username and password, the server stores a cookie for the client
-      - if the client sends an invalid username and password, the server sends a 401 error to the client
-    - chat.html:
-      - client attempts to access the chat by sending a POST message that contains the chat.html URL, message, and cookie
-      - can only be accessed if the client has correctly logged in (aka if the client has an existing cookie)
+Clients can connect to the server with the right addess and port
+  - client_test_1.py is an example of a client
+      - python code takes the input of address, port, username, passsword, message
+          + address and port is intended to be the server's address and port
+          + username and password is the client's login credentials
+          + message is the text that the client wants to post in chat
+      
+4 interactions can occur between server and client:
+
+    - Interaction 1: client sends a GET message requesting login.html 
+        - client message contains login.html URL
+        - server sends login.html
+    
+    - Interaction 2: client sends a POST message requesting login.html
+        - client message contains the login.html URL, username, and password
+         - client is attempting to login to the server
+        - if the client sends a valid username and password
+            + server stores a cookie for the client
+            + server sends login.html
+        - if the client sends an invalid username and password
+            + server sends error.html with a 401 error
+        - credentials.txt stores valid username, password pairs
+    
+    - Interaction 3: client sends a GET message requesting chat.html
+        - client message contains chat.html URL
+        - server sends chat.html
+        
+  - Interaction 4: client sends a POST message requesting chat.html
+      - client contains the chat.html URL, client's message, and cookie
+      - client is attempting to post text to the chat
+      - chat.html can only be accessed if the client has correctly logged in 
+          + (aka if the client has an existing cookie)
       - client can send messages that will be seen along with chat.html
       - the message's format in the chat UI is <username>:<message>
       - client messages are stored in allMessages.txt 
         - allMessages.txt will be created once the first message has been posted in the chat
-Clients can connect to the server with the right addess and port
-  - client_test_1.py is an example of a client
-    - python code takes the input of address, port, username, passsword, message
-      - address and port is intended to be the server's address and port
-      - username and password is the client's login credentials
-      - message is the text that the client wants to post in chat
