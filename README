@@ -5,7 +5,7 @@ Clients can connect to the server with the right address and port
       - python code takes the input of address, port, username, passsword, message
           + address and port is intended to be the server's address and port
           + username and password is the client's login credentials
-          + message is the text that the client wants to post in chat
+          + message is the text that the client wants to send to chat
       
 4 interactions can occur between server and client:
 
@@ -34,5 +34,5 @@ Clients can connect to the server with the right address and port
           + (aka if the client has an existing cookie)
       - the message's format in the chat UI is <username>:<message>
       - client messages are stored in allMessages.txt 
-          + allMessages.txt will be created once the first message has been posted in the chat
+          + allMessages.txt will be created once the first chat message has been posted
       - server sends chat.html, client's cookie, and all the chat messages
