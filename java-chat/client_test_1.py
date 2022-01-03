@@ -47,7 +47,6 @@ if __name__ == '__main__':
         username = allArgs[3]
         password = allArgs[4]
         message = allArgs[5]
-        # print("received = "address, port, username, password, message)
 
         # test1
         h1,p1 = getLoginPage(address, port)
@@ -57,7 +56,6 @@ if __name__ == '__main__':
         # test2
         h2,p2 = postLoginPage(address, port, username, password)    
         print("\n\n test2"+"-"*20)
-        # print("type=",type(p2))
         print(p2)  
 
 
