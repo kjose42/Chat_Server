@@ -1,4 +1,5 @@
-HTTPChatServer hosts a server
+HTTPChatServer hosts a server that uses the HTTP protocol in java
+The server is initialized with a port from command line
   - server sends back one html file: login.html, chat.html, or error.html
     - login.html: 
       - client attempts to login to the server by sending a message that contains the login.html URL, username, and password
@@ -9,5 +10,11 @@ HTTPChatServer hosts a server
       - can only be accessed if the client has correctly logged in (aka if the client has a cookie)
       - client can send messages that will be seen along with chat.html
       - the message's format in the chat UI is <username>:<message>
-      - client messages are stored in allMessages.txt (this file will be created once the first message has been posted in the chat)
+      - client messages are stored in allMessages.txt 
+        - allMessages.txt will be created once the first message has been posted in the chat
 Clients can connect to the server with the right addess and port
+  - client_test_1.py is an example of a client
+    - python code takes the input of address, port, username, passsword, message
+      - address and port is intended to be the server's address and port
+      - username and password is the client's login credentials
+      - message is the text that the client wants to post in chat
