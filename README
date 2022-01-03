@@ -26,8 +26,8 @@ error.html
       and password, or if the client attempts to access the chat page without logging 
       in
       
-======================================================================================
-======================================================================================
+========================================================================================
+========================================================================================
       
 4 interactions can occur between server and client:
 
@@ -59,3 +59,8 @@ error.html
         - client messages are stored in allMessages.txt 
             + allMessages.txt will be created once the first chat message has been posted
         - server sends chat.html, client's cookie, and all the chat messages
+        
+==========================================================================================
+==========================================================================================
+
+Collaborated on this code with @ChaoHsin
