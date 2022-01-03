@@ -55,7 +55,7 @@ error.html
             + (aka if the client has an existing cookie)
         - if the client doesnt have a valid cookie
             + server sends error.html with a 401 error
-        - the message's format in the chat UI is <username>:<message>
+        - chat message format in the chat UI is <username>:<message>
         - client messages are stored in allMessages.txt 
             + allMessages.txt will be created once the first chat message has been posted
         - server sends chat.html, client's cookie, and all the chat messages
