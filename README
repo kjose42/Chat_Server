@@ -1,5 +1,5 @@
 HTTPChatServer.java
-    - sets up server
+    - sets up server which uses HTTP protocol
     - code takes port as input
     
 Clients can connect to the server with the right address and port
