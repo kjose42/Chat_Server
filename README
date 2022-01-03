@@ -2,12 +2,13 @@ HTTPChatServer hosts a server that uses the HTTP protocol in java
 The server is initialized with a port from command line
   - server sends back one html file: login.html, chat.html, or error.html
     - login.html: 
-      - client attempts to login to the server by sending a message that contains the login.html URL, username, and password
+      - client attempts to login to the server by sending a POST message that contains the login.html URL, username, and password
       - credentials.txt stores valid username, password pairs
       - if the client sends a valid username and password, the server stores a cookie for the client
       - if the client sends an invalid username and password, the server sends a 401 error to the client
     - chat.html:
-      - can only be accessed if the client has correctly logged in (aka if the client has a cookie)
+      - client attempts to access the chat by sending a POST message that contains the chat.html URL, message, and cookie
+      - can only be accessed if the client has correctly logged in (aka if the client has an existing cookie)
       - client can send messages that will be seen along with chat.html
       - the message's format in the chat UI is <username>:<message>
       - client messages are stored in allMessages.txt 
